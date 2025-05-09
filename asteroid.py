@@ -10,7 +10,13 @@ class Asteroid(CircleShape):
         self.rotation_speed = 0.5  # degrees per second
 
     def draw(self, screen):
-        pygame.draw.circle(screen, "white", (int(self.position.x), int(self.position.y)), self.radius)
+        pygame.draw.circle(
+            screen,
+            "white",
+            (int(self.position.x), int(self.position.y)),
+            self.radius,
+            
+        )
     
     def update(self, dt):
         self.position += self.velocity * dt
