@@ -5,6 +5,7 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
 
+
 # Constants 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -49,10 +50,10 @@ def main():
                     running = False
                     break
 
-            for asteroid in asteroids:
+            for asteroid in list(asteroids):
                 for shot in shots_group:
                     if shot.collide(asteroid):
-                        asteroid.kill()
+                        asteroid.split()
                         shot.kill()
                         break
                 
